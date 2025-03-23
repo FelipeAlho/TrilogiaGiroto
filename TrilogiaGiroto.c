@@ -1,13 +1,16 @@
 #include <stdio.h>
 #include <locale.h> // adicionar acentuação
+#include <string.h>
+#include <stdlib.h>
+#include <time.h>
 void exibirMenu() { // indica que a função nao retorna valor 
     printf("\n");
     printf("Trilogia de Girotto\n");
     printf("\n");
-    printf("1 - Perguntas e Respostas\n");
-    printf("2 - Cobra na Caixa!\n");
-    printf("3 - Gousmas War\n");
-    printf("0 - Sair\n");
+    printf("(1) - Perguntas e Respostas\n");
+    printf("(2) - Cobra na Caixa!\n");
+    printf("(3) - Gousmas War\n");
+    printf("(0) - Sair\n");
     printf("\n");
     printf("Escolha uma opcao: ");
 }
@@ -16,7 +19,11 @@ void exibirMenuPR(){ // menu do perguntas e respostas
     printf("      Perguntas e Respostas     \n");
     printf("\n");
 }
-
+void exibirMenuCNC(){
+    printf("\n");
+    printf("      Cobra na Caixa     \n");
+    printf("\n");
+}
 int main(){
     setlocale(LC_ALL, "pt_BR.UTF-8");
     
@@ -87,15 +94,50 @@ int main(){
 
                          // Perguntar se deseja jogar novamente ou voltar ao menu
                     printf("\nDeseja jogar novamente?\n");
-                    printf("1 - Sim\n");
-                    printf("2 - Voltar ao menu principal\n");
+                    printf("(1) - Sim\n");
+                    printf("(2) - Voltar ao menu principal\n");
                     printf("Escolha: ");
                     scanf("%d", &continuar);
 
                 } while (continuar == 1);
                 break;
-            case 2:
+            case 2: // Cobra na caixa
+            #define NUM_CAIXAS 5
+            #define NUM_JOGADORES 2
+            do{
+                srand(time(NULL));
+                int botao, cobra, escolhaCaixa, turno;
+                turno = rand() % NUM_JOGADORES;
                 printf("Você escolheu 'Cobra na Caixa'!\n");
+                exibirMenuCNC(); // trazendo o menu desse jogo
+                printf("dois exploradores ficaram presos. No centro da sala, há cinco caixas: uma delas contém o botão para abrir a porta, enquanto uma outra esconde uma cobra mortal.\n");
+                char personagem1[9];
+                char personagem2[9];
+                printf("Esoclha 2 personagens:\n");
+                printf("(1) Felipe\n");
+                printf("(2) Kadu\n");
+                printf("(3) Henrique\n");
+                printf("(4) Vitor\n");
+                printf("(5) Heloisa\n");
+                printf("(6) Laura\n");
+                printf("(7) Bruno\n");                
+                printf("jogador 1:");
+                scanf("%s", &personagem1);
+                printf("jogador 2:");
+                scanf("%s", &personagem2);
+                printf("os personagens escolidos foram %s e %s", personagem1, personagem2);
+                
+                
+                
+                
+                
+                // Perguntar se deseja jogar novamente ou voltar ao menu
+                  printf("\nDeseja jogar novamente?\n");
+                  printf("(1) - Sim\n");
+                  printf("(2) - Voltar ao menu principal\n");
+                  printf("Escolha: ");
+                  scanf("%d", &continuar);
+            }while(continuar == 1);
                 break;
             case 3:
                 printf("Você escolheu'Gousmas War'!\n");
