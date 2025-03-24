@@ -133,11 +133,11 @@ int main(){
                         cobra = rand() % NUM_CAIXAS + 1;
                     } while (botao == cobra); // Garante que não fiquem na mesma caixa
 
-                    printf("\n%s, escolha uma caixa (1 a 5): ", turno == 0 ? personagem1 : personagem2);
+                    printf("\n%s, escolha uma caixa entre 1 a 5: ", turno == 0 ? personagem1 : personagem2);
                     scanf("%d", &escolhaCaixa);
 
                     if (escolhaCaixa < 1 || escolhaCaixa > NUM_CAIXAS) {
-                        printf("⚠️ Caixa inválida! Escolha entre 1 e 5.\n");
+                        printf("Caixa inválida! Escolha entre 1 e 5.\n");
                         continue;
                     }
 
