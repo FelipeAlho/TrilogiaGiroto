@@ -126,10 +126,33 @@ int main(){
                 printf("jogador 2:");
                 scanf("%s", &personagem2);
                 printf("os personagens escolidos foram %s e %s", personagem1, personagem2);
-                
-                
-                
-                
+                while (1) {
+                    // Sorteia a posição da cobra e do botão
+                    do {
+                        botao = rand() % NUM_CAIXAS + 1;
+                        cobra = rand() % NUM_CAIXAS + 1;
+                    } while (botao == cobra); // Garante que não fiquem na mesma caixa
+
+                    printf("\n%s, escolha uma caixa (1 a 5): ", turno == 0 ? personagem1 : personagem2);
+                    scanf("%d", &escolhaCaixa);
+
+                    if (escolhaCaixa < 1 || escolhaCaixa > NUM_CAIXAS) {
+                        printf("⚠️ Caixa inválida! Escolha entre 1 e 5.\n");
+                        continue;
+                    }
+
+                    if (escolhaCaixa == cobra) {
+                        printf("Você encontrou a cobra! Fim de jogo.\n");
+                        break;
+                    } else if (escolhaCaixa == botao) {
+                        printf("Você encontrou o botão e escapou da tumba! Parabéns!\n");
+                        break;
+                    } else {
+                        printf("A caixa estava vazia, As posições mudaram!\n");
+                    }
+
+                    turno = 1 - turno; // Alterna jogador
+                }
                 
                 // Perguntar se deseja jogar novamente ou voltar ao menu
                   printf("\nDeseja jogar novamente?\n");
