@@ -238,8 +238,53 @@ int main()
                             printf("ataque sucedido! gousmas4 com %d de furia\n", gousmas4);
                         }
                     }
+                    if(gousmas3 > 5){
+                        printf("gousmas3 foi destruida\n");
+                    } 
+                    if(gousmas4 > 5){
+                        printf("gousmas4 foi destruida\n");
+                    }
+                    if(gousmas3 > 5 && gousmas4 > 5){
+                        printf("JOGADOR 1 GANHOU O JOGO\n");
+                        break;
+                    }
+                    
+                    if(decisao == 2)
+                    {
+                        decisao = 0;
+                        printf("qual gousmas voce deseja dividir?\n");
+                        printf("(1) gousmas3\n");
+                        printf("(2) gousmas4\n");
+                        scanf("%d", &decisao);
+                        if(decisao == 1)
+                        {
+                            if(gousmas3 % 2 == 0)
+                            {
+                                printf("gousmas3 é par, podemos dividir!\n");
+                                gousmas4 = gousmas4 + gousmas3/2;
+                                gousmas3 = gousmas3/2;
+                                printf("os novos valores são: gousmas3 = %d , gousmas4 = %d\n", gousmas3, gousmas4);
+                            }else
+                            {
+                                printf("gousmas3 não é par, não podemos dividir\n");
+                            }
+                        }
+                        if(decisao == 2)
+                        {
+                            if(gousmas4 % 2 == 0)
+                            {
+                                printf("gousmas4 é par, podemos dividir!\n");
+                                gousmas3 = gousmas3 + gousmas4/2;
+                                gousmas4 = gousmas4/2;
+                                printf("os novos valores são: gousmas3 = %d , gousmas4 = %d\n", gousmas3, gousmas4);
+                            }else
+                            {
+                                printf("gousmas4 não é par, não podemos dividir\n");
+                            }
+                        }
+                    }
+                    decisao = 0;
 
-                    break;
                 }
 
                 // Perguntar se deseja jogar novamente ou voltar ao menu
