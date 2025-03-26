@@ -229,14 +229,42 @@ int main()
                         scanf("%d", &decisao);
                         if (decisao == 1)
                         {
-                            gousmas3++;
-                            printf("ataque sucedido! gousmas3 com %d de furia\n", gousmas3);
+                            decisao = 0;
+                        printf("qual gousmas voce deseja usar para atacar?\n");
+                        printf("(1) gousmas1\n");
+                        printf("(2) gousmas2\n");
+                        scanf("%d", &decisao);
+                            if(decisao == 1)
+                            {
+                                gousmas3 = gousmas3 + gousmas1;
+                                printf("ataque sucedido! gousmas3 com %d de furia\n", gousmas3);
+                            }
+                            if(decisao == 2)
+                            {
+                                gousmas4 = gousmas4 + gousmas2;
+                                printf("ataque sucedido! gousmas4 com %d de furia\n", gousmas4);
+                            }
                         }
                         else if (decisao == 2)
                         {
-                            gousmas4++;
-                            printf("ataque sucedido! gousmas4 com %d de furia\n", gousmas4);
+                            decisao = 0;
+                        printf("qual gousmas voce deseja usar para atacar?\n");
+                        printf("(1) gousmas1\n");
+                        printf("(2) gousmas2\n");
+                        scanf("%d", &decisao);
+                            if(decisao == 1)
+                            {
+                                gousmas4 = gousmas4 + gousmas1;
+                                printf("ataque sucedido! gousmas4 com %d de furia\n", gousmas4);
+                            }
+                            if(decisao ==2 )
+                            {
+                                gousmas4 = gousmas4 + gousmas2;
+                                printf("ataque sucedido! gousmas4 com %d de furia\n", gousmas4);
+                            }
                         }
+                   
+                   
                     }
                     if(gousmas3 > 5){
                         printf("gousmas3 foi destruida\n");
@@ -283,8 +311,75 @@ int main()
                             }
                         }
                     }
+                    
                     decisao = 0;
+                    printf("Jogador 2 o que voce ira fazer?\n");
+                    printf("(1) atacar\n");
+                    printf("(2) dividir\n");
+                    scanf("%d", &decisao);
+                    if (decisao == 1)
+                    {
+                        decisao = 0;
+                        printf("qual gousmas voce deseja atacar?\n");
+                        printf("(1) gousmas1\n");
+                        printf("(2) gousmas2\n");
+                        scanf("%d", &decisao);
+                        if (decisao == 1)
+                        {
+                            gousmas1++;
+                            printf("ataque sucedido! gousmas1 com %d de furia\n", gousmas1);
+                        }
+                        else if (decisao == 2)
+                        {
+                            gousmas2++;
+                            printf("ataque sucedido! gousmas2 com %d de furia\n", gousmas2);
+                        }
+                    }
+                    if(gousmas1 > 5){
+                        printf("gousmas1 foi destruida\n");
+                    } 
+                    if(gousmas2 > 5){
+                        printf("gousmas2 foi destruida\n");
+                    }
+                    if(gousmas1 > 5 && gousmas2 > 5){
+                        printf("JOGADOR 2 GANHOU O JOGO\n");
+                        break;
+                    }
 
+                    if(decisao == 2)
+                    {
+                        decisao = 0;
+                        printf("qual gousmas voce deseja dividir?\n");
+                        printf("(1) gousmas1\n");
+                        printf("(2) gousmas2\n");
+                        scanf("%d", &decisao);
+                        if(decisao == 1)
+                        {
+                            if(gousmas1 % 2 == 0)
+                            {
+                                printf("gousmas1 é par, podemos dividir!\n");
+                                gousmas2 = gousmas2 + gousmas1/2;
+                                gousmas1 = gousmas1/2;
+                                printf("os novos valores são: gousmas1 = %d , gousmas2 = %d\n", gousmas1, gousmas2);
+                            }else
+                            {
+                                printf("gousmas1 não é par, não podemos dividir\n");
+                            }
+                        }
+                        if(decisao == 2)
+                        {
+                            if(gousmas2 % 2 == 0)
+                            {
+                                printf("gousmas2 é par, podemos dividir!\n");
+                                gousmas1 = gousmas1 + gousmas2/2;
+                                gousmas2 = gousmas2/2;
+                                printf("os novos valores são: gousmas1 = %d , gousmas2 = %d\n", gousmas1, gousmas2);
+                            }else
+                            {
+                                printf("gousmas2 não é par, não podemos dividir\n");
+                            }
+                        }
+                    }
                 }
 
                 // Perguntar se deseja jogar novamente ou voltar ao menu
