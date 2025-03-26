@@ -230,10 +230,10 @@ int main()
                         if (decisao == 1)
                         {
                             decisao = 0;
-                        printf("qual gousmas voce deseja usar para atacar?\n");
-                        printf("(1) gousmas1\n");
-                        printf("(2) gousmas2\n");
-                        scanf("%d", &decisao);
+                            printf("qual gousmas voce deseja usar para atacar?\n");
+                            printf("(1) gousmas1\n");
+                            printf("(2) gousmas2\n");
+                            scanf("%d", &decisao);
                             if(decisao == 1)
                             {
                                 gousmas3 = gousmas3 + gousmas1;
@@ -241,17 +241,17 @@ int main()
                             }
                             if(decisao == 2)
                             {
-                                gousmas4 = gousmas4 + gousmas2;
+                                gousmas3 = gousmas3 + gousmas2;
                                 printf("ataque sucedido! gousmas4 com %d de furia\n", gousmas4);
                             }
                         }
                         else if (decisao == 2)
                         {
                             decisao = 0;
-                        printf("qual gousmas voce deseja usar para atacar?\n");
-                        printf("(1) gousmas1\n");
-                        printf("(2) gousmas2\n");
-                        scanf("%d", &decisao);
+                            printf("qual gousmas voce deseja usar para atacar?\n");
+                            printf("(1) gousmas1\n");
+                            printf("(2) gousmas2\n");
+                            scanf("%d", &decisao);
                             if(decisao == 1)
                             {
                                 gousmas4 = gousmas4 + gousmas1;
@@ -326,14 +326,41 @@ int main()
                         scanf("%d", &decisao);
                         if (decisao == 1)
                         {
-                            gousmas1++;
-                            printf("ataque sucedido! gousmas1 com %d de furia\n", gousmas1);
+                                decisao = 0;
+                            printf("qual gousmas voce deseja usar para atacar?\n");
+                            printf("(1) gousmas3\n");
+                            printf("(2) gousmas4\n");
+                            scanf("%d", &decisao);
+                                if(decisao == 1)
+                                {
+                                    gousmas1 = gousmas1 + gousmas3;
+                                    printf("ataque sucedido! gousmas1 com %d de furia\n", gousmas1);
+                                }
+                                if(decisao == 2)
+                                {
+                                    gousmas1 = gousmas1 + gousmas4;
+                                    printf("ataque sucedido! gousmas1 com %d de furia\n", gousmas1);
+                                }
                         }
                         else if (decisao == 2)
                         {
-                            gousmas2++;
-                            printf("ataque sucedido! gousmas2 com %d de furia\n", gousmas2);
+                            decisao = 0;
+                            printf("qual gousmas voce deseja usar para atacar?\n");
+                            printf("(1) gousmas3\n");
+                            printf("(2) gousmas4\n");
+                            scanf("%d", &decisao);
+                                if(decisao == 1)
+                                {
+                                    gousmas2 = gousmas4 + gousmas3;
+                                    printf("ataque sucedido! gousmas2 com %d de furia\n", gousmas2);
+                                }
+                                if(decisao ==2 )
+                                {
+                                    gousmas2 = gousmas4 + gousmas4;
+                                    printf("ataque sucedido! gousmas2 com %d de furia\n", gousmas2);
+                                }
                         }
+                    
                     }
                     if(gousmas1 > 5){
                         printf("gousmas1 foi destruida\n");
